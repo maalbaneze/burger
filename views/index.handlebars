@@ -16,7 +16,7 @@
             <h2>Burgers yet to be devoured...</h2>
             <ul>
                 {{#each burgers}}
-                {{#unless this.eaten}}
+                {{#unless this.devoured}}
                 <li>
                     {{this.id}}
                     {{this.burger_name}}
@@ -34,7 +34,7 @@
             <h2>Burgers that have been scarfed down</h2>
 
             {{#each burgers}}
-            {{#if this.eaten}}
+            {{#if this.devoured}}
             <li>
                 {{this.id}}
                 {{this.burger_name}}
@@ -57,8 +57,8 @@
 
                 <div class="form-group">
                     <label for="eaten">Devoured?</label><br>
-                    <input type="radio" name="eaten" value="0"> Not yet eaten<br>
-                    <input type="radio" name="eaten" value="1"> Eaten
+                    <input type="radio" name="eaten" value="1"> Not yet eaten<br>
+                    <input type="radio" name="eaten" value="0"> Eaten
                 </div>
 
                 <button type="submit">Add Burger</button>
